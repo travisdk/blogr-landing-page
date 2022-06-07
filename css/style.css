@@ -1,0 +1,190 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,500,700);
+@import url(https://fonts.googleapis.com/css?family=Overpass:300,600);
+
+:root {
+  --very-light-red: hsl(13, 100%, 72%);
+  --light-red: hsl(353, 100%, 62%);
+  --light-red-cta: hsl(356, 100%, 66%);
+  --very-dark-blue: hsl(208, 49%, 24%);
+  --very-dark-grayish-blue: hsl(207, 13%, 34%);
+  --very-dark-gray-blue: hsl(237, 17%, 21%);
+  --very-dark-desaturated-blue: hsl(237, 23%, 32%);
+  --very-dark-black-blue: hsl(240, 10%, 16%);
+  --grayish-blue: hsl(240, 2%, 79%);
+  --white: hsl(0, 0%, 100%);
+  --font-main: "Overpass";
+  --font-secondary: "Ubuntu";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+}
+body {
+  font-size: 1rem;
+  font-family: var(--font-main);
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+
+.intro {
+  padding: 3.5em 1.5em;
+  margin-bottom: 4em;
+  height: 600px;
+  background-position: 35% 32%;
+  background-repeat: no-repeat;
+  background-image: url("/images/bg-pattern-intro-mobile.svg"),
+    linear-gradient(to bottom, var(--very-light-red), var(--light-red));
+  border-radius: 0 0 0 100px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-navlinks {
+  display: none;
+}
+.logo img {
+  width: 80px;
+}
+.hamburger-icon {
+  position: absolute;
+  right: 1.5em;
+}
+#hamburger-menu {
+  display: none;
+}
+#hamburger-menu:checked ~ .main-navlinks {
+  display: block;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 100px;
+}
+.heading {
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.2;
+  padding: 1em;
+  text-align: center;
+  color: var(--very-dark-blue);
+}
+
+.cta-block {
+  padding: 6em 0 1.5em 0;
+  color: var(--white);
+  text-align: center;
+}
+
+.cta-heading {
+  font-weight: 600;
+  font-size: 2.2rem;
+  color: var(--white);
+}
+
+.cta-copy {
+  color: var(--white);
+  padding-top: 0.5em;
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
+.cta-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 3em;
+}
+.btn {
+  border-radius: 25px;
+  padding: 0.8em 1.2em;
+  margin: 0 0.5em;
+  font-weight: 600;
+}
+.btn-start {
+  background-color: #fff;
+  color: var(--light-red-cta);
+}
+.btn-more {
+  background: none;
+  color: var(--white);
+  border: 1px solid white;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.copy {
+  color: var(--very-dark-grayish-blue);
+  padding: 0 2em;
+  text-align: center;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+.illustration {
+  padding: 2em 0;
+}
+
+.state-of-art {
+  margin-top: 14em;
+  background: url("/images/bg-pattern-circles.svg"),
+    linear-gradient(45deg, hsl(237, 17%, 21%), hsl(237, 23%, 32%));
+  background-position: -120px -250px, 0 0;
+  background-size: 165%;
+  height: 650px;
+  background-repeat: no-repeat;
+  width: 100%;
+  border-radius: 0 100px 0 100px;
+  position: relative;
+}
+.phones {
+  position: absolute;
+  top: -180px;
+  max-width: 100%;
+}
+.state-of-art .heading {
+  color: var(--white);
+  margin-top: 4.5em;
+  font-size: 2.5rem;
+}
+.state-of-art .copy {
+  color: var(--white);
+}
+.footer {
+  border-radius: 0 50px 0 0;
+  margin-top: 4em;
+  padding-bottom: 4em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--very-dark-black-blue);
+  color: var(--white);
+}
+.footer .logo {
+  padding: 4em 0;
+}
+.footer-links li {
+  text-align: center;
+  padding: 0.3em;
+}
+.footer-links a {
+  text-decoration: none;
+  color: var(--grayish-blue);
+}
+.footer-links .links-heading {
+  font-weight: 600;
+  padding: 1.5em 0;
+}
