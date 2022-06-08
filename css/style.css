@@ -52,6 +52,32 @@ ul {
 
 .main-navlinks {
   display: none;
+  padding: 1em;
+  background-color: var(--white);
+  position: absolute;
+  border-radius: 5px;
+  flex-direction: column;
+  align-items: center;
+  left: 1em;
+  right: 1em;
+  top: 100px;
+}
+.main-navitem {
+  padding: 0.5em 0;
+}
+.sub-navlinks {
+  display: none;
+}
+.main-navlink,
+.sub-navlink {
+  color: var(--very-dark-grayish-blue);
+  font-family: var(--font-secondary);
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+.divider {
+  width: 100%;
+  color: var(--very-dark-desaturated-blue);
 }
 .logo img {
   width: 80px;
@@ -59,16 +85,20 @@ ul {
 .hamburger-icon {
   position: absolute;
   right: 1.5em;
+  background-image: url("/images/icon-hamburger.svg");
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
 }
+
 #hamburger-menu {
   display: none;
 }
 #hamburger-menu:checked ~ .main-navlinks {
-  display: block;
-  position: absolute;
-  right: 0;
-  left: 0;
-  top: 100px;
+  display: flex;
+}
+#hamburger-menu:checked ~ .hamburger-icon {
+  background-image: url("/images/icon-close.svg");
 }
 .heading {
   font-size: 1.8rem;
