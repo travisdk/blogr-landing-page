@@ -64,7 +64,7 @@ ul {
   box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.2);
 }
 .main-navitem {
-  padding: 0.5em 0;
+  padding: 1em 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -96,6 +96,7 @@ ul {
 .show {
   font-weight: 600;
 }
+
 .show::after {
   content: "";
   position: absolute;
@@ -109,6 +110,7 @@ ul {
 .divider {
   width: 100%;
   color: var(--very-dark-desaturated-blue);
+  margin-bottom: 1em;
 }
 .logo img {
   width: 80px;
@@ -140,6 +142,10 @@ input[id^="input-"] {
 }
 input[id^="input-"]:checked ~ .sub-navlinks {
   display: flex;
+}
+
+input[id^="input-"]:checked + .show {
+  font-weight: 500;
 }
 input[id^="input-"]:checked + .show::after {
   transform: scaleY(-1);
@@ -194,6 +200,17 @@ input[id^="input-"]:checked + .show::after {
   background: none;
   color: var(--white);
   border: 1px solid white;
+}
+.btn-signup {
+  background: linear-gradient(
+    to right,
+    var(--very-light-red),
+    var(--light-red)
+  );
+  color: var(--white);
+  padding-left: 2em;
+  padding-right: 2em;
+  margin: 0.5em 0;
 }
 
 main {
