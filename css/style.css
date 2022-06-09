@@ -61,20 +61,51 @@ ul {
   left: 1em;
   right: 1em;
   top: 100px;
+  box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.2);
 }
 .main-navitem {
   padding: 0.5em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 .sub-navlinks {
   display: none;
+  margin-top: 1.5em;
+  padding: 1em;
+  background-color: #eee;
+  border-radius: 5px;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.sub-navitem {
+  padding: 0.5em 0;
 }
 .main-navlink,
-.sub-navlink {
+.sub-navlink,
+.show {
   color: var(--very-dark-grayish-blue);
   font-family: var(--font-secondary);
   font-weight: 500;
   font-size: 1.1rem;
+  position: relative;
 }
+.main-navlink,
+.show {
+  font-weight: 600;
+}
+.show::after {
+  content: "";
+  position: absolute;
+  left: calc(100% + 6px);
+  top: 6px;
+  width: 10px;
+  height: 7px;
+  background: url("/images/icon-arrow-dark.svg") no-repeat;
+}
+
 .divider {
   width: 100%;
   color: var(--very-dark-desaturated-blue);
@@ -100,6 +131,21 @@ ul {
 #hamburger-menu:checked ~ .hamburger-icon {
   background-image: url("/images/icon-close.svg");
 }
+
+input[id^="input-"] {
+  display: none;
+}
+.show + a {
+  display: none;
+}
+input[id^="input-"]:checked ~ .sub-navlinks {
+  display: flex;
+}
+input[id^="input-"]:checked + .show::after {
+  transform: scaleY(-1);
+  top: 6px;
+}
+
 .heading {
   font-size: 1.8rem;
   font-weight: 600;
