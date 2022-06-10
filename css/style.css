@@ -61,7 +61,7 @@ ul {
   left: 1em;
   right: 1em;
   top: 100px;
-  box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 18px 10px rgba(0, 0, 0, 0.2);
 }
 .main-navitem {
   padding: 1em 0;
@@ -87,8 +87,8 @@ ul {
 .sub-navlink,
 .show {
   color: var(--very-dark-grayish-blue);
-  font-family: var(--font-secondary);
-  font-weight: 500;
+  font-family: var(--font-main);
+  font-weight: 600;
   font-size: 1.1rem;
   position: relative;
 }
@@ -101,7 +101,7 @@ ul {
   content: "";
   position: absolute;
   left: calc(100% + 6px);
-  top: 6px;
+  top: 8px;
   width: 10px;
   height: 7px;
   background: url("/images/icon-arrow-dark.svg") no-repeat;
