@@ -12,6 +12,8 @@
   --very-dark-black-blue: hsl(240, 10%, 16%);
   --grayish-blue: hsl(240, 2%, 79%);
   --white: hsl(0, 0%, 100%);
+  --paler-white: rgba(255, 255, 255, 0.7);
+  --very-paler-white: rgba(255, 255, 255, 0.3);
   --font-main: "Overpass";
   --font-secondary: "Ubuntu";
 }
@@ -84,20 +86,18 @@ ul {
   padding: 0.5em 0;
 }
 .main-navlink,
+.main-navlink-2,
 .sub-navlink,
 .show {
   color: var(--very-dark-grayish-blue);
-  font-family: var(--font-main);
-  font-weight: 600;
+  font-family: var(--font-secondary);
+  font-weight: 500;
   font-size: 1.1rem;
   position: relative;
 }
-.main-navlink,
-.show {
-  font-weight: 600;
-}
 
-.show::after {
+.show::after,
+.main-navlink::after {
   content: "";
   position: absolute;
   left: calc(100% + 6px);
@@ -292,6 +292,12 @@ main {
       linear-gradient(to right, var(--very-light-red), var(--light-red));
     height: 600px;
   }
+  .logo img {
+    width: 120px;
+  }
+  .logo {
+    margin-right: 2em;
+  }
   .header {
     align-items: center;
     max-width: 1200px;
@@ -315,22 +321,69 @@ main {
   .main-navitem {
     padding: 0;
     margin: 0;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    position: relative;
   }
-  .main-navlink,
-  .sub-navlink {
+  .main-navitem .main-navlink,
+  .main-navlink-2 {
+    color: var(--paler-white);
+  }
+
+  .main-navitem:hover .main-navlink {
     color: var(--white);
+    border-bottom: 2px solid var(--white);
   }
+  .sub-navlink {
+    color: #333;
+    font-weight: 300;
+  }
+
+  .sub-navitem:hover .sub-navlink {
+    color: black;
+    font-weight: 600;
+  }
+  .main-navlink::after {
+    background-image: url("/images/icon-arrow-light.svg");
+  }
+
+  .main-navitem:hover .main-navlink::after {
+    transform: scaleY(-1);
+  }
+
+  .main-navitem:hover > .sub-navlinks {
+    display: block;
+    position: absolute;
+    width: 150px;
+    top: 40px;
+    left: 30px;
+    padding: 1em;
+    box-shadow: 0px 0px 18px 10px rgba(0, 0, 0, 0.2);
+  }
+
   .divider {
     border: none;
     margin: 0;
     margin-left: 20em;
   }
-  .btn-signup {
+  .divider .main-navlink::after {
+    display: none;
+  }
+  .btn-signup,
+  .btn-start {
     margin: 0;
     width: 140px;
-
     padding: 0.7em 1em;
     text-align: center;
+    background: var(--white);
+    color: var(--light-red);
+  }
+  .btn-signup:hover,
+  .btn-start:hover {
+    color: white;
+    background: var(--very-paler-white);
+  }
+  .btn-more:hover {
     background: var(--white);
     color: var(--light-red);
   }
@@ -339,5 +392,8 @@ main {
   }
   .show + a {
     display: inline-block;
+  }
+  .footer-links a:hover {
+    text-decoration: underline;
   }
 }
