@@ -228,6 +228,7 @@ main {
   text-align: center;
   line-height: 1.8;
   font-size: 1rem;
+  max-width: 600px;
 }
 .designed-for-future .illustration {
   background: url(/images/illustration-editor-mobile.svg) no-repeat;
@@ -242,7 +243,7 @@ main {
     linear-gradient(45deg, hsl(237, 17%, 21%), hsl(237, 23%, 32%));
   background-position: -120px -250px, 0 0;
   background-size: 165%;
-  height: 650px;
+  height: 630px;
   background-repeat: no-repeat;
   width: 100%;
   border-radius: 0 100px 0 100px;
@@ -255,8 +256,7 @@ main {
 }
 .state-of-art .heading {
   color: var(--white);
-  margin-top: 5.5em;
-  margin-bottom: 0.5em;
+
   font-size: 2.5rem;
   text-align: center;
 }
@@ -264,6 +264,16 @@ main {
   color: var(--white);
 }
 .state-of-art .right {
+  position: absolute;
+  padding: 0 1em;
+
+  width: 100%;
+  bottom: 5%;
+  max-width: 600px;
+  /* horizontally center the text */
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 .blogr-info .illustration {
   background-image: url(/images/illustration-laptop-mobile.svg);
@@ -322,7 +332,7 @@ main {
   }
   .header {
     align-items: center;
-    max-width: 1200px;
+
     margin: 0 auto;
   }
   .nav {
@@ -341,10 +351,9 @@ main {
     width: 100%;
   }
   .main-navitem {
-    padding: 0;
-    margin: 0;
     padding-bottom: 25px;
     padding-top: 25px;
+    padding-left: 2em;
     position: relative;
   }
   .main-navitem .main-navlink,
@@ -386,8 +395,9 @@ main {
   .divider {
     border: none;
     margin: 0;
-    margin-left: 20em;
+    margin-left: 20%;
   }
+
   .divider .main-navlink::after {
     display: none;
   }
@@ -447,7 +457,6 @@ main {
   .designed-for-future .copy,
   .designed-for-future .sub-heading {
     text-align: left;
-    max-width: 600px;
   }
 
   .designed-for-future .illustration {
@@ -459,7 +468,6 @@ main {
     background-position-x: -100px;
   }
   .state-of-art {
-    display: flex;
     position: relative;
     margin-top: 600px;
     padding: 1em;
@@ -472,16 +480,14 @@ main {
   }
   .state-of-art .phones {
     top: -75px;
-    left: 100px;
+    left: 0;
   }
   .state-of-art .right {
-    min-width: 300px;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: 5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    all: unset;
+    position: absolute;
+    right: 2em;
+    max-width: 400px;
+    margin-left: 1em;
   }
   .state-of-art .heading,
   .state-of-art .copy {
